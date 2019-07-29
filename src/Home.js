@@ -37,13 +37,14 @@ class Home extends React.Component {
       <div
         style={{
           position: "absolute",
-          left: "45vw",
-          top: "40vh"
-          // transform: "translate(-px, -50px)"
+          left: "50%",
+          top: "40vh",
+          width: "40%",
+          transform: "translate(-50%, -50px)"
         }}>
         <CommandPalette
           commands={commands}
-          display="inline"
+          display="modal"
           hotKeys="command+p"
           //   alwaysRenderCommands={true}
           closeOnSelect={true}
