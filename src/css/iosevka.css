@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "Iosevka";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/iosevka-extralight.woff2") format("woff2"),
+    url("/fonts/iosevka-extralight.woff") format("woff"),
+    url("/fonts/iosevka-extralight.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Iosevka";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/iosevka-regular.woff2") format("woff2"),
+    url("/fonts/iosevka-regular.woff") format("woff"),
+    url("/fonts/iosevka-regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Iosevka";
+  font-style: italic;
+  font-weight: 400;
+  src: url("/fonts/iosevka-lightitalic.woff2") format("woff2"),
+    url("/fonts/iosevka-lightitalic.woff") format("woff"),
+    url("/fonts/iosevka-lightitalic.ttf") format("truetype");
+}

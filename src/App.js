@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./css/app.scss";
+import "./css/iosevka.css";
+import { BrowserRouter, Route } from "react-router-dom";
+import Home from "./Home";
+import FirstPage from "./FirstPage";
+import SecondPage from "./SecondPage";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  // state = {
+  //   selectedOption: null
+  // };
+  // handleChange = selectedOption => {
+  //   this.setState({ selectedOption });
+  //   console.log(`Option selected:`, selectedOption);
+  // };
+  render() {
+    const { mobile } = this.props;
+    return (
+      <BrowserRouter>
+        <Route
+          path="/"
+          exact
+          render={props => <Home {...props} isMobile={mobile} />}
+        />
+        <Route
+          path="/first-page"
+          exact
+          render={props => <FirstPage {...props} isMobile={mobile} />}
+        />
+        <Route
+          path="/second-page"
+          exact
+          render={props => <SecondPage {...props} isMobile={mobile} />}
+        />
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;
