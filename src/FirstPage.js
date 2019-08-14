@@ -5,21 +5,26 @@ import chrome from "react-command-palette/themes/chrome-theme";
 import "react-command-palette/themes/chrome.css";
 
 class FirstPage extends React.Component {
+  componentDidMount() {
+    if (this.$ref && window.location.href.includes("#hi")) {
+      console.log("in here");
+      this.$ref.scrollIntoView({
+        // optional params
+        behaviour: "smooth",
+        block: "start",
+        inline: "center"
+      });
+    }
+  }
   render() {
-    const { history } = this.props;
+    const { history, section } = this.props;
+    console.log(section);
     const commands = [
-      {
-        name: "/first-page",
-        command() {
-          console.log(history);
-          history.replace("first-page");
-        }
-      },
       {
         name: "/second-page",
         command() {
           console.log(history);
-          history.replace("second-page");
+          history.replace("/second-page");
         }
       },
       {
@@ -40,7 +45,12 @@ class FirstPage extends React.Component {
           placeholder="Go anywhere"
           autofocus={true}
         />
-        <p>Hello World</p>
+        <div
+          ref={ref => {
+            this.$ref = ref;
+          }}>
+          Other content
+        </div>
       </div>
     );
   }

@@ -9,16 +9,16 @@ class SecondPage extends React.Component {
     const { history } = this.props;
     const commands = [
       {
-        name: "/first-page",
+        name: "/first-page#hi",
         command() {
           console.log(this.props);
-          history.replace("first-page");
+          history.replace("/first-page#hi");
         }
       },
       {
         name: "/second-page",
         command() {
-          history.replace("second-page");
+          history.replace("/second-page");
         }
       },
       {

@@ -18,10 +18,18 @@ class Home extends React.Component {
         }
       },
       {
+        name: "/first-page#hi",
+        command() {
+          console.log(history);
+          history.push("/first-page#hi");
+          // return;
+        }
+      },
+      {
         name: "/second-page",
         command() {
           console.log(history);
-          history.push("second-page");
+          history.push("/second-page");
           // return;
         }
       },
@@ -44,7 +52,7 @@ class Home extends React.Component {
         }}>
         <CommandPalette
           commands={commands}
-          display="modal"
+          display="inline"
           hotKeys="command+p"
           //   alwaysRenderCommands={true}
           closeOnSelect={true}
