@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 import CommandPalette from "react-command-palette";
 import chrome from "react-command-palette/themes/chrome-theme";
 import "react-command-palette/themes/chrome.css";
+import { isAbsolute } from "path";
 
 class FirstPage extends React.Component {
   componentDidMount() {
@@ -35,16 +36,19 @@ class FirstPage extends React.Component {
       }
     ];
     return (
-      <div>
-        <CommandPalette
-          commands={commands}
-          display="inline"
-          hotKeys="command+p"
-          alwaysRenderCommands={false}
-          theme={chrome}
-          placeholder="Go anywhere"
-          autofocus={true}
-        />
+      <div style={{ position: "fixed", top: "50%" }}>
+        <div>
+          <CommandPalette
+            commands={commands}
+            display="modal"
+            hotKeys="command+p"
+            alwaysRenderCommands={true}
+            theme={chrome}
+            placeholder="Go anywhere"
+            autofocus={false}
+            trigger="Click me"
+          />
+        </div>
         <div
           ref={ref => {
             this.$ref = ref;

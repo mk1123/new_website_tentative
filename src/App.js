@@ -9,30 +9,43 @@ import Queue from "queue-fifo";
 
 // this is the overall structure of the website, that gets passed along into all of the child components
 const structure = {
+  "": {},
   about_me: { contact: {}, resume: {} },
   projects: {
-    "gm-hackathon": {},
-    polly: {},
-    "text-journal": {},
-    utrient: {},
-    "cal-admissions": {},
-    "cal-eats": {}
+    children: {
+      "gm-hackathon": {},
+      polly: {},
+      "text-journal": {},
+      utrient: {},
+      "cal-admissions": {},
+      "cal-eats": {}
+    }
   },
-  experience: { pause: {}, dascena: {}, csm: {}, "data-science-society": {} },
+  experience: {
+    industry: {
+      children: { pause: {}, dascena: {}, "data-science-society": {} }
+    },
+    teaching: {
+      children: { "cs-mentors": {}, algorithms: {}, "data-science": {} }
+    }
+  },
   research: {
-    math: {},
-    sociology: {},
-    modin: {},
-    astrophysics: {},
-    "college-basketball": {},
-    "nba-hackathon": {}
+    children: {
+      math: {},
+      sociology: {},
+      modin: {},
+      astrophysics: {},
+      "college-basketball": {},
+      "nba-hackathon": {}
+    }
   },
-  sundry: {
+  misc: {
     books: {},
     "board-games": {},
     "video-games": {},
     films: {},
-    music: {}
+    music: {},
+    "other-interests": {}
   }
 };
 
@@ -42,17 +55,35 @@ const parseStructure = structure => {
   var parents = {};
   for (const [section, value] of Object.entries(structure)) {
     queue.enqueue([section, value]);
-    // parents[section] = "";
-    returnedStructure[section] = section + "/";
+    parents[section] = "";
+    if (section.length) {
+      returnedStructure[section] = "/" + section + "/";
+    } else {
+      returnedStructure[section] = "/";
+    }
   }
 
   while (queue.size()) {
     const [nextSection, nextValue] = queue.dequeue();
     for (const [section, value] of Object.entries(nextValue)) {
-      queue.enqueue([section, value]);
-      parents[section] = returnedStructure[nextSection];
-      returnedStructure[section] =
-        returnedStructure[nextSection] + section + "/";
+      if (Object.keys(nextValue)[0] === "children") {
+        for (const [section1, value1] of Object.entries(
+          nextValue["children"]
+        )) {
+          returnedStructure[section1] =
+            returnedStructure[nextSection].slice(
+              0,
+              returnedStructure[nextSection].length - 1
+            ) +
+            "#" +
+            section1;
+        }
+      } else {
+        queue.enqueue([section, value]);
+        parents[section] = returnedStructure[nextSection];
+        returnedStructure[section] =
+          returnedStructure[nextSection] + section + "/";
+      }
     }
   }
 
@@ -69,7 +100,7 @@ class App extends React.Component {
   // };
   componentDidMount() {
     const [newStructure, newParents] = parseStructure(structure);
-    console.log(newParents);
+    console.log(newStructure);
   }
   render() {
     const { mobile } = this.props;
