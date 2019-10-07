@@ -35,6 +35,7 @@ class FirstPage extends React.Component {
         }
       }
     ];
+    console.log(commands);
     return (
       <div style={{ position: "fixed", top: "50%" }}>
         <div>
