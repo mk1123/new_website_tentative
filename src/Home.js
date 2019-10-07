@@ -33,7 +33,7 @@ class Home extends React.Component {
             position: "absolute",
             left: "50%",
             top: "40vh",
-            width: "40%",
+            width: isMobile ? "70%" : "40%",
             height: "50%",
             transform: "translate(-50%, -50px)",
             overflow: "hidden"
@@ -45,9 +45,7 @@ class Home extends React.Component {
             //   alwaysRenderCommands={true}
             closeOnSelect={true}
             theme={chrome}
-            placeholder={
-              isMobile ? "Start typing or scroll up" : "Start typing."
-            }
+            placeholder={isMobile ? "Start typing." : "Start typing."}
             autofocus={true}
             maxDisplayed={9}
             options={{
