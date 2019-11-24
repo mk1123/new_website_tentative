@@ -99,7 +99,35 @@ let content = {
       body: defaultContent
     },
     "weekly-updates": {
-      body: defaultContent
+      body: (
+        <div>
+          <p>
+            <b>11/23/2019</b>. Fun fact - my computer needed repairs so I turned
+            it over to the Apple Store. I thought I had backed up everything on
+            my computer, but for this website, turns out I only had access to
+            the minified, production code, which is obviously very different
+            than code that I could actually edit. <br />
+            And of course, my computer got wiped, so I lost all the code for
+            this website :( That's why I haven't updated it for a while, but I
+            found time today to go through and reimplement all the code and
+            content, and backed everything to multiple places, so everything
+            should be good now. I'll make sure to go back to the regular, weekly
+            updates going forward!
+          </p>
+          <p>
+            <b>10/13/2019</b>. Power was out for three days so we had a five-day
+            weekend; naturally, I was about 10x less productive than I should've
+            been. So much stuff to do this week; I hope I can do all of it
+            justice.
+          </p>
+          <p>
+            <b>10/07/19</b>. I'm going to try to post weekly updates here every
+            week! This is basically a blog but a bit more manageable and in a
+            form that I'm comfortable with. Eventually I want to link this with
+            my texting journal app so I can make texts to this page directly.
+          </p>
+        </div>
+      )
     },
     body: (
       <div>

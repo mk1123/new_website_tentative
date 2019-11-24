@@ -1,5 +1,5 @@
 import React from "react";
-import { hydrate, render } from "react-dom";
+import { render } from "react-dom";
 import App from "./App";
 import "./css/bootstrap-grid.min.css";
 import "./css/bootstrap-reboot.min.css";
@@ -25,13 +25,10 @@ window.mobileAndTabletcheck = function() {
 const isMobile = window.mobileAndTabletcheck();
 
 const rootElement = document.getElementById("root");
-if (rootElement.hasChildNodes()) {
-  hydrate(<App mobile={isMobile} />, rootElement);
-} else {
-  render(<App mobile={isMobile} />, rootElement);
-}
+
+render(<App mobile={isMobile} />, rootElement);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.register();
+serviceWorker.unregister();
