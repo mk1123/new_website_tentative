@@ -43,6 +43,7 @@ export default class MainPage extends React.Component {
                 <p style={{ fontSize: "0.8em" }}>
                   Last updated: {this.props.lastUpdated}
                 </p>
+                <br />
               </div>
             </Col>
             <Col></Col>

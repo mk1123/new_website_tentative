@@ -1,4 +1,15 @@
 import React from "react";
+import curr_pic from "./profile.jpg";
+import { Link } from "react-router-dom";
+import scythe from "./scythe.jpg";
+import book from "./book.jpg";
+import study_abroad from "./study_abroad.jpg";
+import skating from "./skating.jpg";
+import cmd_palette from "./cmd_palette.png";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import ReactMediumImg from "react-medium-zoom";
 let defaultContent = (
   <p>
     Hello world. This page must still be under construction! Check back in in a
@@ -8,13 +19,81 @@ let defaultContent = (
 let content = {
   about: {
     photos: {
-      body: defaultContent
+      body: (
+        <div>
+          <p>
+            Here are some photos that are pertinent to me at this point in life.
+            They are in no particular order.
+          </p>
+          <Container>
+            <Row>
+              <Col style={{ marginTop: "10px" }}>
+                <ReactMediumImg width="200px" src={scythe}></ReactMediumImg>
+              </Col>
+              <Col style={{ marginTop: "10px" }}>
+                <ReactMediumImg
+                  width="200px"
+                  src={study_abroad}
+                ></ReactMediumImg>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <ReactMediumImg
+                  style={{ marginTop: "10px" }}
+                  width="200px"
+                  src={book}
+                ></ReactMediumImg>
+              </Col>
+              <Col>
+                <ReactMediumImg
+                  style={{ marginTop: "10px" }}
+                  width="200px"
+                  src={skating}
+                ></ReactMediumImg>
+              </Col>
+            </Row>
+          </Container>
+        </div>
+      )
     },
     resume: {
-      body: defaultContent
+      body: (
+        <p>
+          Here's a copy of my resume if you're interested:{" "}
+          <a
+            target="_blank"
+            href="https://www.dropbox.com/s/67aopu1f0fke87v/Manan%20Khattar%20Resume%2010%3A9%3A19.pdf?dl=0"
+          >
+            link
+          </a>
+          .
+        </p>
+      )
     },
     website: {
-      body: defaultContent
+      body: (
+        <div>
+          <p>
+            This website is inspired by the Command Palette in VSCode/Sublime
+            Text/Atom! It looks like this:
+          </p>
+          <ReactMediumImg width="100%" src={cmd_palette}></ReactMediumImg>
+
+          <p style={{ marginTop: "20px" }}>
+            The idea is that it provides a much more efficient, streamlined way
+            of viewing different pages if you know how to use it, and it also
+            provides a different perspective on going through content than the
+            normal linear style.
+          </p>
+
+          <p>
+            Of course, it could also be garbage. In either case, please{" "}
+            <Link to="/about/contact">tell me what you think</Link>! Much much
+            appreciated.
+          </p>
+        </div>
+      )
     },
     contact: {
       body: defaultContent
@@ -22,7 +101,55 @@ let content = {
     "weekly-updates": {
       body: defaultContent
     },
-    body: defaultContent
+    body: (
+      <div>
+        <p>
+          Hi everyone! I'm Manan Khattar. Welcome to my website. This is me.
+          <center>
+            <img
+              src={curr_pic}
+              alt=""
+              style={{ width: "140px", marginTop: "20px", borderRadius: "50%" }}
+            />
+          </center>
+        </p>
+        <h3>tl;dr</h3>
+        <ul style={{ fontSize: "0.8em" }}>
+          <li>Studying Computer Science and Applied Math at UC Berkeley.</li>
+          <li>
+            Love learning. And technology. And self-growth. And optimizing
+            things.
+          </li>
+          <li>Trying hard to be a good person.</li>
+          <li>
+            Want to start sharing more about myself! This website is a good
+            place to start.
+          </li>
+        </ul>
+        <p>
+          Please explore! Let me know if you see anything weird or
+          objectionable. For convenience, here are some other links on this
+          section of the website:
+        </p>
+        <ul style={{ fontSize: "0.8em" }}>
+          <li>
+            <Link to="/about/website">How does this website work?</Link>
+          </li>
+          <li>
+            <Link to="/about/contact">Contact</Link>
+          </li>
+          <li>
+            <Link to="/about/resume">Resume</Link>
+          </li>
+          <li>
+            <Link to="/about/photos">Photos</Link>
+          </li>
+          <li>
+            <Link to="/about/weekly-updates">Weekly updates</Link>
+          </li>
+        </ul>
+      </div>
+    )
   },
   projects: {
     polly: {
@@ -76,35 +203,60 @@ let content = {
       },
       body: defaultContent
     },
-    research: {
-      math: {
-        body: defaultContent
-      },
-      modin: {
-        body: defaultContent
-      },
-      pocab: {
-        body: defaultContent
-      },
-      sociology: {
-        body: defaultContent
-      },
-      astrophysics: {
-        body: defaultContent
-      },
-      "nba-hackathon": {
-        body: defaultContent
-      },
-      "college-bball": {
-        body: defaultContent
-      },
-      "raise-social-game": {
-        body: defaultContent
-      },
-      "slam-indoor-mapping": {
-        body: defaultContent
-      }
+    body: defaultContent
+  },
+  research: {
+    math: {
+      body: defaultContent
+    },
+    modin: {
+      body: defaultContent
+    },
+    pocab: {
+      body: defaultContent
+    },
+    sociology: {
+      body: defaultContent
+    },
+    astrophysics: {
+      body: defaultContent
+    },
+    "nba-hackathon": {
+      body: defaultContent
+    },
+    "college-bball": {
+      body: defaultContent
+    },
+    "raise-social-game": {
+      body: defaultContent
+    },
+    "slam-indoor-mapping": {
+      body: defaultContent
     }
+  },
+  my: {
+    music: {
+      body: defaultContent
+    },
+    books: {
+      body: defaultContent
+    },
+    films: {
+      body: defaultContent
+    },
+    thoughts: {
+      body: defaultContent
+    },
+    interests: {
+      body: defaultContent
+    },
+    "board-games": {
+      body: defaultContent
+    },
+    "video-games": {
+      body: defaultContent
+    },
+    body: defaultContent
   }
 };
 
