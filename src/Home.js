@@ -27,7 +27,8 @@ class Home extends React.Component {
       <div
         style={{
           overflow: "hidden"
-        }}>
+        }}
+      >
         <div
           style={{
             position: "absolute",
@@ -37,7 +38,8 @@ class Home extends React.Component {
             height: "50%",
             transform: "translate(-50%, -50px)",
             overflow: "hidden"
-          }}>
+          }}
+        >
           <CommandPalette
             commands={commands}
             display="inline"
@@ -47,7 +49,7 @@ class Home extends React.Component {
             theme={chrome}
             placeholder={isMobile ? "Start typing." : "Start typing."}
             autofocus={true}
-            maxDisplayed={9}
+            maxDisplayed={7}
             options={{
               key: "name", // default is "name"
               keys: ["name"], // default is "name"
@@ -71,7 +73,8 @@ class Home extends React.Component {
             position: "absolute",
             bottom: "0px",
             padding: "10px"
-          }}>
+          }}
+        >
           <div
             style={{
               // position: "absolute",
@@ -85,19 +88,22 @@ class Home extends React.Component {
               // right: "50px",
               fontSize: "0.7em",
               color: "#505050"
-            }}>
+            }}
+          >
             © Manan Khattar, 2019. Font used:{" "}
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://typeof.net/Iosevka/">
+              href="https://typeof.net/Iosevka/"
+            >
               Iosevka SS09.
             </a>{" "}
             Credit to{" "}
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://github.com/asabaylus">
+              href="https://github.com/asabaylus"
+            >
               asabaylus
             </a>{" "}
             for <kbd>react-command-palette</kbd>, a fantastic package.{" "}

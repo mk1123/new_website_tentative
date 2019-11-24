@@ -1,14 +1,13 @@
 import React from "react";
 import "./css/app.scss";
-import "./css/iosevka.css";
 import { BrowserRouter, Route } from "react-router-dom";
 import Home from "./Home";
-import MainPage from "./MainPage";
 import Queue from "queue-fifo";
 import structure from "./content";
+import MainPage from "./MainPage";
 
 // this is the overall structure of the website, that gets passed along into all of the child components
-
+const lastUpdated = "11/23/2019";
 const parseStructure = structure => {
   var queue = new Queue();
   var returnedStructure = {};
@@ -74,14 +73,10 @@ class App extends React.Component {
                   isMobile={mobile}
                   title={key}
                   unProcessedCommands={everythingExceptOne(key, newStructure)}
-                  prev={newParents[key]}>
-                  <div
-                    style={{
-                      color: "#505050"
-                    }}>
-                    {bodies[key]}
-                  </div>
-                </MainPage>
+                  prev={newParents[key]}
+                  body={bodies[key]}
+                  lastUpdated={lastUpdated}
+                ></MainPage>
               )}
             />
           );
