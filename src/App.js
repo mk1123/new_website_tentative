@@ -7,7 +7,7 @@ import structure from "./content";
 import MainPage from "./MainPage";
 
 // this is the overall structure of the website, that gets passed along into all of the child components
-const lastUpdated = "11/23/2019";
+const lastUpdated = "01/01/2020";
 const parseStructure = structure => {
   var queue = new Queue();
   var returnedStructure = {};
