@@ -101,17 +101,19 @@ let content = {
     "weekly-updates": {
       body: (
         <div>
-          <p>1/01/2020.</p>Long time no updates! I've been pretty busy with
-          worrying about finals, relaxing for a couple days, and back to
-          worrying again as my flight to Edinburgh is in two days. I've made all
-          my checklists - going to spend the next two days packing, saying my
-          final goodbyes, and selecting books/movies to peruse for the 17-hour
-          journey. I'm so excited! Also side note, I've shifted most of my
-          journaling to Agenda, so I might report here less frequently. I'll
-          find time eventually to update all my projects and experience and
-          such, though.
           <p>
-            <b>12/05/2019.</b>Thanksgiving break was great! Finally played
+            <b>1/01/2020.</b> Long time no updates! I've been pretty busy with
+            worrying about finals, relaxing for a couple days, and back to
+            worrying again as my flight to Edinburgh is in two days. I've made
+            all my checklists - going to spend the next two days packing, saying
+            my final goodbyes, and selecting books/movies to peruse for the
+            17-hour journey. I'm so excited! Also side note, I've shifted most
+            of my journaling to Agenda, so I might report here less frequently.
+            I'll find time eventually to update all my projects and experience
+            and such, though.
+          </p>
+          <p>
+            <b>12/05/2019.</b> Thanksgiving break was great! Finally played
             Scythe with my family, which was something I had been looking
             forward to do for a while. Pretty much counting down the days till
             I'm going abroad at this point -- I'm very excited. Just waiting to
@@ -162,7 +164,7 @@ let content = {
         <ul style={{ fontSize: "0.8em" }}>
           <li>Studying Computer Science and Applied Math at UC Berkeley.</li>
           <li>
-            Love learning. And technology. And self-growth. And optimizing
+            Love learning. And technology. And board games. And optimizing
             things.
           </li>
           <li>Trying hard to be a good person.</li>
