@@ -90,15 +90,7 @@ class Home extends React.Component {
               color: "#505050"
             }}
           >
-            © Manan Khattar, 2019. Font used:{" "}
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://typeof.net/Iosevka/"
-            >
-              Iosevka SS09.
-            </a>{" "}
-            Credit to{" "}
+            © Manan Khattar, 2019. Credit to{" "}
             <a
               target="_blank"
               rel="noopener noreferrer"
