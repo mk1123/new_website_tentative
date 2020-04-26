@@ -8,7 +8,7 @@ import MainPage from "./MainPage";
 
 // this is the overall structure of the website, that gets passed along into all of the child components
 const lastUpdated = "01/01/2020";
-const parseStructure = structure => {
+const parseStructure = (structure) => {
   var queue = new Queue();
   var returnedStructure = {};
   var bodies = {};
@@ -54,7 +54,7 @@ class App extends React.Component {
         <Route
           path="/"
           exact
-          render={props => (
+          render={(props) => (
             <Home
               {...props}
               isMobile={mobile}
@@ -62,12 +62,11 @@ class App extends React.Component {
             />
           )}
         />
-        {Object.keys(newStructure).map(key => {
+        {Object.keys(newStructure).map((key) => {
           return (
             <Route
               path={newStructure[key]}
-              exact
-              render={props => (
+              render={(props) => (
                 <MainPage
                   {...props}
                   isMobile={mobile}

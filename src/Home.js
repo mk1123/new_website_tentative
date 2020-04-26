@@ -5,7 +5,7 @@ import chrome from "react-command-palette/themes/chrome-theme";
 import "react-command-palette/themes/chrome.css";
 
 class Home extends React.Component {
-  commandCreator = parsedStructure => {
+  commandCreator = (parsedStructure) => {
     const { history } = this.props;
     const returnCommands = [];
     const keys = Object.keys(parsedStructure);
@@ -15,7 +15,7 @@ class Home extends React.Component {
         command() {
           // console.log(history);
           history.replace(parsedStructure[key]);
-        }
+        },
       });
     }
     return returnCommands;
@@ -26,7 +26,7 @@ class Home extends React.Component {
     return (
       <div
         style={{
-          overflow: "hidden"
+          overflow: "hidden",
         }}
       >
         <div
@@ -37,7 +37,7 @@ class Home extends React.Component {
             width: isMobile ? "70%" : "40%",
             height: "50%",
             transform: "translate(-50%, -50px)",
-            overflow: "hidden"
+            overflow: "hidden",
           }}
         >
           <CommandPalette
@@ -51,14 +51,12 @@ class Home extends React.Component {
             autofocus={true}
             maxDisplayed={7}
             options={{
-              key: "name", // default is "name"
-              keys: ["name"], // default is "name"
-
-              // other options may be freely configured
+              key: "name",
+              keys: ["name"],
               threshold: -Infinity,
               limit: 10,
               allowTypo: true,
-              scoreFn: null
+              scoreFn: null,
             }}
             //   style={{ width: "100vh" }}
             // spinner={false}
@@ -72,7 +70,7 @@ class Home extends React.Component {
             width: "100%",
             position: "absolute",
             bottom: "0px",
-            padding: "10px"
+            padding: "10px",
           }}
         >
           <div
@@ -87,7 +85,7 @@ class Home extends React.Component {
               width: "70%",
               // right: "50px",
               fontSize: "0.7em",
-              color: "#505050"
+              color: "#505050",
             }}
           >
             © Manan Khattar, 2019. Credit to{" "}
