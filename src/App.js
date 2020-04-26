@@ -66,12 +66,12 @@ class App extends React.Component {
           return (
             <Route
               path={newStructure[key]}
+              exact
               render={(props) => (
                 <MainPage
                   {...props}
                   isMobile={mobile}
                   title={key}
-                  exact
                   unProcessedCommands={everythingExceptOne(key, newStructure)}
                   prev={newParents[key]}
                   body={bodies[key]}
