@@ -71,6 +71,7 @@ class App extends React.Component {
                   {...props}
                   isMobile={mobile}
                   title={key}
+                  exact
                   unProcessedCommands={everythingExceptOne(key, newStructure)}
                   prev={newParents[key]}
                   body={bodies[key]}
